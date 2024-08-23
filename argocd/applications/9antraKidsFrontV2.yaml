@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name:  nineantrakidsfrontv2
+  name: nineantrakidsfrontv2
   namespace: argocd
 spec:
   project: default
@@ -10,10 +10,12 @@ spec:
     server: https://kubernetes.default.svc
 
   source:
-    path: 9antraKidsFrontV2 # you chould provide the folder in the git repo
-    repoURL: "https://github.com/FtouhiS/argocd.git" # the url of the github repository
-    targetRevision: HEAD # the branch of the github repository.We can use Head or a specific version
+    path: 9antraKidsFrontV2 # specify the folder in the git repo
+    repoURL: "https://github.com/FtouhiS/argocd.git" # URL of the GitHub repository
+    targetRevision: HEAD # branch of the GitHub repository (HEAD or a specific version)
   syncPolicy:
-    automated: {} # This will detect changes automatically from the repository
+    automated: # This will detect changes automatically from the repository
+      prune: true # Optional: Automatically delete resources that are no longer tracked in Git
+      selfHeal: true # Optional: Automatically correct drift from the desired state
     syncOptions:
       - CreateNamespace=true
