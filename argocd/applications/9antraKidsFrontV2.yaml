@@ -7,7 +7,7 @@ spec:
   project: default
   destination:
     namespace: default
-    server: https://192.168.89.129:6443
+    server: https://kubernetes.default.svc/
 
   source:
     path: 9antraKidsFrontV2 # you chould provide the folder in the git repo
