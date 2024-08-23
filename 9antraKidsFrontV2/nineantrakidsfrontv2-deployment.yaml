@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nineantrakidsfrontv2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: 9antrakidsfrontv2
+
+  template:
+    metadata:
+      labels:
+        app: 9antrakidsfrontv2
+    spec:
+      containers:
+      - name: 9antrakidsfrontv2
+        image: soulaimaft98933/9antrakidsfrontv2:1.1.46
+        ports:
+        - containerPort: 80
