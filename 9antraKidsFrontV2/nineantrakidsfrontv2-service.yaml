@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nineantrakidsfrontv2-svc
+  name: nineantrakidsv2-svc
 spec:
   ports:
   - port: 8080
@@ -9,4 +9,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: 9antrakidsfrontv2
+    app: 9antrakidsv2
